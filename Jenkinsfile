@@ -11,13 +11,13 @@ pipeline
                 }
             }
         }
-        stage('Deploy')
-        {
-            steps{withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_home', maven: 'Maven_home', mavenSettingsConfig: '', traceability: true) 
-                {
-                    sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@172.31.27.20:/usr/share/tomcat/webapps'
-                }
-            }
-        }
+        // stage('Deploy')
+        // {
+        //     steps{withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_home', maven: 'Maven_home', mavenSettingsConfig: '', traceability: true) 
+        //         {
+        //             sh 'scp -o StrictHostKeyChecking=no target/classes/calcalculator.jar ec2-user@52.28.142.160:/usr/share/tomcat/webapps'
+        //         }
+        //     }
+        // }
     }
 }
